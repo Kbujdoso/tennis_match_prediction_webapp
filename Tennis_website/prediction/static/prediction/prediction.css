@@ -128,7 +128,7 @@ p {
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     text-align: center;
     width: 100%;
-    max-width: 300px; /* kisebb szélesség */
+    max-width: 300px; 
     animation: fadeInUp 0.5s ease;
 }
 

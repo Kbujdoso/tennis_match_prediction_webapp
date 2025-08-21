@@ -8,10 +8,24 @@
 </head>
 <body>
     <header>
-        <h1>Project Information (same as GitHub README.md)</h1>
+        <h1>Project Information (based on GitHub README.md)</h1>
     </header>
     
     <div class="center-content">
+        <p>Hello! I'm Koppány Bujdosó, 19 years old, and passionate about AI and web development.</p>
+        <p>As a personal project, I built an AI that predicts tennis match outcomes and created this Django website to provide a user-friendly interface.</p>
+        <p>The project leverages TensorFlow, Keras, NumPy, Pandas, and Django.</p>
+        <p>I'm currently seeking an internship opportunity where I can grow and contribute my skills.</p>
+        
+        <div class="buttons-group">
+            <a href="https://github.com/Kbujdoso/tennis_match_prediction_webapp" target="_blank">
+                <button class="prediction">GitHub Repo (Website)</button>
+            </a>
+            <a href="https://github.com/Kbujdoso/tennis_match_prediction" target="_blank">
+                <button class="prediction">GitHub Repo (Original Project)</button>
+            </a>
+        </div>
+
         <p>If you want to use the AI to predict match outcomes, press the "Go to Prediction" button. This provides a user interface instead of running the main.py script in the terminal.</p>
         <a href="{% url 'prediction' %}">
             <button class="prediction">Go to Prediction</button>
