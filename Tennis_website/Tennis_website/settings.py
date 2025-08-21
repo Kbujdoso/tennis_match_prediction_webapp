@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-zy-7ixw5)jk+aqyc)@+!t=+nan$pr-xey+@)tgd3f!f=oe-qvg
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tennis-match-prediction-webapp.onrender.com']
+ALLOWED_HOSTS = ['*']
 
 
 
