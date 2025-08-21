@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tennis Match Prediction AI</title>
+    <link rel="stylesheet" href="{% static 'prediction/index.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Project Information (same as GitHub README.md)</h1>
+    </header>
+    
+    <div class="center-content">
+        <p>If you want to use the AI to predict match outcomes, press the "Go to Prediction" button. This provides a user interface instead of running the main.py script in the terminal.</p>
+        <a href="{% url 'prediction' %}">
+            <button class="prediction">Go to Prediction</button>
+        </a>
+    </div>
+    
+    <div class="markdown-content">
+        {{ content|safe }}
+    </div>
+</body>
+</html>

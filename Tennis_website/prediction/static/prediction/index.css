@@ -1,0 +1,94 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #333;
+}
+
+header {
+    background: #fff;
+    padding: 30px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+header h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 28px;
+    color: #2a5298;
+}
+
+.center-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 30px 40px;
+    margin: 40px auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    max-width: 600px;
+    animation: fadeIn 0.7s ease;
+}
+
+.center-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    color: #444;
+}
+
+button.prediction {
+    background: #2a5298;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+button.prediction:hover {
+    background: #1e3c72;
+    transform: translateY(-2px);
+}
+
+.markdown-content {
+    background: #fff;
+    margin: 40px auto;
+    max-width: 800px;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    line-height: 1.7;
+    font-size: 16px;
+    color: #333;
+}
+
+.markdown-content h2, 
+.markdown-content h3 {
+    color: #2a5298;
+    margin-top: 20px;
+}
+
+.markdown-content a {
+    color: #1e3c72;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.markdown-content a:hover {
+    text-decoration: underline;
+}
+
+/* animáció */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
