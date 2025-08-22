@@ -49,6 +49,14 @@ def name_id(name):
         return id
     else:
         raise ValueError(f"This name is not in the database: {name}")
+    
+def name_id_for_website(name):
+    player = player_elos[player_elos['name'] == name]
+    if not player.empty:
+        id = player.iloc[0]['id']
+        return id
+    else:
+        return None
 def id_stats(id):
     player = players_stats[players_stats['id'] == id]
     if not player.empty:
@@ -129,8 +137,8 @@ def prediction_for_website(player_1_name, player_2_name, date, series, court, su
     player_elos = pd.read_csv(os.path.join(BASE_DIR, "players_elo.csv"))
     matches = pd.read_csv(os.path.join(BASE_DIR, "matches.csv"))
         
-    player_1_id = name_id(player_1_name)
-    player_2_id = name_id(player_2_name)
+    player_1_id = name_id_for_website(player_1_name)
+    player_2_id = name_id_for_website(player_2_name)
 
     date = date_to_unix_website(date)
     series = Series(series)

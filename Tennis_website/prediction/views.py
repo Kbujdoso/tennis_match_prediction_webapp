@@ -5,7 +5,7 @@ from django.shortcuts import render
 import markdown
 import os 
 from django.conf import settings
-from Tennis_match_prediction.main import prediction_for_website
+from Tennis_match_prediction.main import prediction_for_website, name_id_for_website
 import csv
 import json
 from django.http import JsonResponse
@@ -39,17 +39,24 @@ def prediction_view(request):
     if request.method == "POST": 
         player1 = request.POST.get("player1")
         player2 = request.POST.get("player2")
-        date = request.POST.get("date")
-        series = request.POST.get("series")
-        court = request.POST.get("court")
-        surface = request.POST.get("surface")
-        round = request.POST.get("round")
-        result = prediction_for_website(player1, player2, date, series, court, surface, round)
+        if (name_id_for_website(player1) != None and name_id_for_website(player2) != None):
+            date = request.POST.get("date")
+            series = request.POST.get("series")
+            court = request.POST.get("court")
+            surface = request.POST.get("surface")
+            round = request.POST.get("round")
+            result = prediction_for_website(player1, player2, date, series, court, surface, round)
 
-    return render(request, "prediction/prediction.html", {
-        "result": result,
-        "player_list_json": json.dumps(player_list)
-    })
+            return render(request, "prediction/prediction.html", {
+                "result": result,
+                "player_list_json": json.dumps(player_list)
+            })
+        else:
+            return render(request, "prediction/prediction.html", {
+                "result": "Invalid name please enter a valid name which is int the database.",
+                "player_list_json": json.dumps(player_list)
+            })
+        
     
 def levenshtein(str1, str2):
     m, n = len(str1), len(str2)
