@@ -9,4 +9,4 @@ RUN git clone https://github.com/Kbujdoso/tennis_match_prediction_webapp.git . \
 
 RUN pip install --no-cache-dir -r Tennis_website/requirements.txt
 
-CMD ["gunicorn", "Tennis_website.wsgi:application", "--bind", "0.0.0.0:8000", "--timeout", "120"]
+CMD ["gunicorn", "Tennis_Website.Tennis_Website.wsgi:application", "--bind", "0.0.0.0:8000", "--timeout", "120"]
