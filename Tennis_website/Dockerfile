@@ -1,8 +1,12 @@
 FROM python:3.10.12
+
 RUN apt-get update && apt-get install -y git-lfs && git lfs install
+
 WORKDIR /app
-COPY Tennis_website/requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
-RUN git lfs pull
+
+RUN git clone https://github.com/Kbujdoso/tennis_match_prediction_webapp.git . \
+    && git lfs pull
+
+RUN pip install --no-cache-dir -r Tennis_website/requirements.txt
+
 CMD ["gunicorn", "Tennis_website.wsgi:application", "--bind", "0.0.0.0:8000", "--timeout", "120"]
