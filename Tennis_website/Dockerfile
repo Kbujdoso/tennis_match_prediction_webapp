@@ -9,6 +9,9 @@ RUN git -C Tennis_website lfs pull
 
 WORKDIR /app/Tennis_website/Tennis_website
 RUN pip install --no-cache-dir -r requirements.txt
+RUN python3 manage.py migrate
+RUN python3 manage.py collectstatic --noinput
 EXPOSE 8000
+
 
 CMD ["gunicorn", "Tennis_website.wsgi:application", "--bind", "0.0.0.0:8000", "--timeout", "120"]
