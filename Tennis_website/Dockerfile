@@ -11,6 +11,8 @@ WORKDIR /app/Tennis_website/Tennis_website
 RUN pip install --no-cache-dir -r requirements.txt
 ENV DJANGO_SETTINGS_MODULE=Tennis_website.settings
 RUN python3 manage.py migrate
+RUN python3 manage.py collectstatic --noinput
+
 EXPOSE 8000
 
 
