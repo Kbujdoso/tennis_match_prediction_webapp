@@ -14,7 +14,7 @@ from rapidfuzz import process
 import os
 
 
-csv_path = os.path.join(settings.BASE_DIR, "..", "Tennis_match_prediction", "player_features.csv")
+csv_path = os.path.join(os.path.dirname(settings.BASE_DIR), "Tennis_match_prediction", "player_features.csv")
 csv_path = os.path.normpath(csv_path)
 
 player_list = []
