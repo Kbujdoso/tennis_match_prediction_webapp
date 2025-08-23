@@ -11,7 +11,10 @@ import json
 from django.http import JsonResponse
 
 from rapidfuzz import process
+import os
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+csv_path = os.path.join(BASE_DIR, "..","Tennis_match_prediction", "player_features.csv")
 
 player_list = []
 with open('/home/koppany/Tennis_website/Tennis_match_prediction/player_features.csv', newline='', encoding='utf-8') as csvfile:
